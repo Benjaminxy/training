@@ -25,6 +25,9 @@ public class CountOccurrences {
     "Priority 1 (Low): "+count[0]  + " tickets Priority 2 (Medium): " +count[1]   + " tickets Priority 3 (High): "+ count[2]   + " tickets"
         );
 
+
+
+
     }
 
     private static void countOccurrences(int[] tickets ,  int[] count) {
