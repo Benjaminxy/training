@@ -34,7 +34,7 @@ public class CountOccurrences {
 
         for (int i =0 ; i < tickets.length ; i++)
         {
-
+//this is very important ******************
             count[tickets[i] - 1]++;
 
 
