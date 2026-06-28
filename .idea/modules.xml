@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MaxMinIndex/MaxMinIndex.iml" filepath="$PROJECT_DIR$/MaxMinIndex/MaxMinIndex.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Merge Two Sorted Arrays/Merge Two Sorted Arrays.iml" filepath="$PROJECT_DIR$/Merge Two Sorted Arrays/Merge Two Sorted Arrays.iml" />
       <module fileurl="file://$PROJECT_DIR$/MinMax/MinMax.iml" filepath="$PROJECT_DIR$/MinMax/MinMax.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/training.iml" filepath="$PROJECT_DIR$/.idea/training.iml" />
     </modules>
