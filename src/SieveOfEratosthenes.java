@@ -19,7 +19,7 @@ public class SieveOfEratosthenes {
 
         // 2. Mark numbers 2 to 100 as true (assume prime initially)
         for (int i = 2; i < isPrime.length; i++) {
-            isPrime[i] = true;
+            isPrime[i] = true ;
         }
 
         // 3. Run the Sieve algorithm
