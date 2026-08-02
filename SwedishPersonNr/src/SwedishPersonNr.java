@@ -64,7 +64,7 @@ for (int i = 0; i<ids.length; i++) {
 
         char [] c = id.toCharArray();
 
-        for (int i = 0; i <c.length ; i++)
+        for (int i = 0; i <c.length ; i++){
             if (Character.isDigit(c[i]) && c [id.length()-5] ==  '-') {
                 return true ;
 
