@@ -32,35 +32,78 @@ String[] phones = {"0701234567", "+46701234567", "123456", "07012345678", "+4670
 
 public class SwedishPhoneNumberValidator {
 
-
     public static void main(String[] args) {
 
-        String[] phones = {"0701234567", "+46701234567", "123456", "07012345678", "+4670123456"};
+        String[] phones = {
+                "0701234567",
+                "+46701234567",
+                "123456",
+                "07012345678",
+                "+4670123456"
+        };
 
-        for (int i=0; i<phones.length; i++) {
-
-            swedishPhoneNumberValidator (phones [i]) ;
+        for (int i = 0; i < phones.length; i++) {
+            validatePhoneNumber(phones[i]);
         }
-
     }
 
-    private static void swedishPhoneNumberValidator(String phone) {
+    private static void validatePhoneNumber(String phone) {
 
-       // System.out.println( phone +"  " + phone.length());
+        if (phone.startsWith("07")) {
 
-        if (!phone.startsWith("+") && phone.length()!=12) {
-            System.out.println(phone + " " +"invalid");
+            if (phone.length() < 10) {
+                System.out.println(phone + " → INVALID (too short)");
+                return;
+            }
 
-        }else {
-            System.out.println(phone +"→ VALID (international format)");
+            if (phone.length() > 10) {
+                System.out.println(phone + " → INVALID (too long)");
+                return;
+            }
 
+            if (containsOnlyDigits(phone, 0)) {
+                System.out.println(phone + " → VALID (local format)");
+            } else {
+                System.out.println(phone + " → INVALID (contains non-digits)");
+            }
+
+        } else if (phone.startsWith("+467")) {
+
+            if (phone.length() < 12) {
+                System.out.println(phone + " → INVALID (too short for international)");
+                return;
+            }
+
+            if (phone.length() > 12) {
+                System.out.println(phone + " → INVALID (too long for international)");
+                return;
+            }
+
+            // Start at index 1 to skip the plus sign
+            if (containsOnlyDigits(phone, 1)) {
+                System.out.println(phone + " → VALID (international format)");
+            } else {
+                System.out.println(phone + " → INVALID (contains non-digits)");
+            }
+
+        } else if (phone.length() < 10) {
+            System.out.println(phone + " → INVALID (too short)");
+
+        } else {
+            System.out.println(phone + " → INVALID (wrong format)");
         }
-        if (phone.length()<10) {
-            System.out.println(phone + "  → INVALID (too short)");
-        } else if (phone.length()>11) {
+    }
 
+    private static boolean containsOnlyDigits(String phone, int startIndex) {
 
+        for (int i = startIndex; i < phone.length(); i++) {
+            char character = phone.charAt(i);
+
+            if (character < '0' || character > '9') {
+                return false;
+            }
         }
 
+        return true;
     }
 }
