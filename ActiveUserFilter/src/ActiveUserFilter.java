@@ -33,12 +33,12 @@ public class ActiveUserFilter {
 
         activeUserFilter(ages);
 
-        System.out.println(ages);
+       // System.out.println(ages);
     }
 
     private static void activeUserFilter(ArrayList<Integer> ages) {
 
-        Iterator <Integer> it = ages.iterator();
+       /* Iterator <Integer> it = ages.iterator();
 
         while(it.hasNext())
         {
@@ -48,5 +48,22 @@ public class ActiveUserFilter {
             }
         }
 
+
+        */
+
+        ArrayList <Integer> acceptableage = new ArrayList<>();
+
+        for (int age:ages) {
+
+
+            if (age>=18) {
+                acceptableage.add(age);
+            }
+
+        }
+
+        System.out.println(acceptableage);
     }
+
+
 }
