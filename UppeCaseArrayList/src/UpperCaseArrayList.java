@@ -36,7 +36,7 @@ public class UpperCaseArrayList {
 
 
 
-        System.out.println("Normalized:  " +codes);
+        System.out.println("Normalized:  " + codes);
 
     }
 }
