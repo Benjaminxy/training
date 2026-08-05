@@ -34,7 +34,7 @@ public class ConditionalCounter {
     private static void conditionalCounter(ArrayList<Double> orders , double threshold) {
         int counter = 0 ;
         for(double order: orders) {
-        if (order>=threshold) {
+        if (order>threshold) {
 
             counter++;
 
