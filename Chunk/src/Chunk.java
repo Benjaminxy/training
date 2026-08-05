@@ -15,7 +15,7 @@ class  Chunk{
 
             int end = i + chunkSize;
             if (end > ids.size()) {
-                end = ids.size();
+                end = ids.size() ;
             }
 
             ArrayList<Integer> chunk = new ArrayList<>(ids.subList(i, end));
