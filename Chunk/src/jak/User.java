@@ -4,12 +4,12 @@ public class User {
 
     private String username;
     private String password;
-    private String something;
+    private String name;
 
-    public User(String username, String password, String something) {
+    public User(String name,  String username, String password) {
         this.username = username;
         this.password = password;
-        this.something = something;
+        this.name = name;
     }
 
     public String getUsername() {

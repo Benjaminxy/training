@@ -1,14 +1,35 @@
 package jak;
 
+import java.util.*;
+
 public class Main {
 
     private static final User[] USERS = new User[10];
 
     public static void main(String[] agrs) {
 
-        Boolean result = signUp(new User("benjamin", "test1234", "test"));
+    String name ="";
+    String username = "";
+    String password="";
+    Scanner input = new Scanner(System.in);
+    Boolean result = false;
 
-        signUp(new User("benjamin", "test1234", "test"));
+    
+        while (!result) {
+        System.out.println("please enter your Name");
+
+        
+         name = input.nextLine();
+        System.out.println("please enter your Username");
+        input = new Scanner(System.in);
+         username = input.nextLine();
+
+        System.out.println("please enter your password");
+
+        input = new Scanner(System.in);
+         password = input.nextLine();
+
+         result = signUp(new User(name, username, password));
 
         if (!result) {
 
@@ -19,15 +40,29 @@ public class Main {
             System.out.println("Done!");
         }
 
-        User user = signIn("benjamin", "test1234");
-        if(user!=null) {
-            System.out.println(user);
-
-        }else{
-            System.out.println("user is not found");
         }
 
-        
+        //sign in 
+        User user = null;
+        while (user == null) {
+
+            System.out.println("please enter your Username for sign in");
+            input = new Scanner(System.in);
+            username = input.nextLine();
+
+            System.out.println("please enter your password for sinm in");
+
+            input = new Scanner(System.in);
+            password = input.nextLine();
+
+            user = signIn(username, password);
+            if (user != null) {
+                System.out.println(user);
+
+            } else {
+                System.out.println("user is not found");
+            }
+        }
 
     }
 
@@ -36,7 +71,7 @@ public class Main {
         for (int i = 0; i < USERS.length; i++) {
 
             if (USERS[i] != null &&
-                USERS[i].getUsername().equals(users.getUsername())) {
+                    USERS[i].getUsername().equals(users.getUsername())) {
 
                 return false;
             }
@@ -59,7 +94,7 @@ public class Main {
         for (int i = 0; i < USERS.length; i++) {
 
             if (USERS[i] != null &&
-                USERS[i].getUsername().equals(username)) {
+                    USERS[i].getUsername().equals(username)) {
 
                 if (USERS[i].getPassword().equals(password)) {
 
