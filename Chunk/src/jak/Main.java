@@ -2,36 +2,38 @@ package jak;
 
 import java.util.*;
 
+import service.UserService;
+
 public class Main {
 
-    private static final User[] USERS = new User[10];
+   
 
     public static void main(String[] agrs) {
 
-    String name ="";
-    String username = "";
-    String password="";
+        UserService userService = new UserService();
+
+   
     Scanner input = new Scanner(System.in);
-    Boolean result = false;
+
 
     
-        while (!result) {
+      
         System.out.println("please enter your Name");
 
         
-         name = input.nextLine();
+        String name = input.nextLine();
         System.out.println("please enter your Username");
         input = new Scanner(System.in);
-         username = input.nextLine();
+       String  username = input.nextLine();
 
         System.out.println("please enter your password");
 
         input = new Scanner(System.in);
-         password = input.nextLine();
+        String password = input.nextLine();
 
-         result = signUp(new User(name, username, password));
+         int result = userService.signUp(new User(name, username, password));
 
-        if (!result) {
+        if (result ==-1) {
 
             System.out.println("The usename exist try again");
 
@@ -40,10 +42,10 @@ public class Main {
             System.out.println("Done!");
         }
 
-        }
+      
 
         //sign in 
-        User user = null;
+   /*     User user = null;
         while (user == null) {
 
             System.out.println("please enter your Username for sign in");
@@ -66,28 +68,7 @@ public class Main {
 
     }
 
-    public static boolean signUp(User users) {
 
-        for (int i = 0; i < USERS.length; i++) {
-
-            if (USERS[i] != null &&
-                    USERS[i].getUsername().equals(users.getUsername())) {
-
-                return false;
-            }
-        }
-
-        for (int i = 0; i < USERS.length; i++) {
-
-            if (USERS[i] == null) {
-
-                USERS[i] = users;
-                return true;
-            }
-        }
-
-        return true;
-    }
 
     public static User signIn(String username, String password) {
 
@@ -109,4 +90,7 @@ public class Main {
 
         return null;
     }
+
+     */
+}
 }
