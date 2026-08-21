@@ -42,5 +42,20 @@ public  int signUp(User users) {
 
         return -1;
     }
+    public User findUsername (String username){
 
+        for (int i = 0; i < USERS.length; i++) 
+            {
+                if (USERS[i] != null && USERS[i].getUsername().equals(username) )
+                {
+                    return USERS[i];
+                
+                   
+                }
+            
+        }
+         return null;
+
+
+    }
 }

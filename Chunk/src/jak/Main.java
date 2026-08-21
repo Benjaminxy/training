@@ -46,10 +46,7 @@ public class Main {
 
       
 
-        //sign in 
-   /*     User user = null;
-        while (user == null) {
-
+ 
             System.out.println("please enter your Username for sign in");
             input = new Scanner(System.in);
             username = input.nextLine();
@@ -58,17 +55,16 @@ public class Main {
 
             input = new Scanner(System.in);
             password = input.nextLine();
-
-            user = signIn(username, password);
-            if (user != null) {
-                System.out.println(user);
+String result1 = userService.signIn(username, password);
+           
+            if (result1 != null) {
+                System.out.println( "hello" result1);
 
             } else {
                 System.out.println("user is not found");
             }
         }
 
-    }
 
 
 
@@ -93,6 +89,5 @@ public class Main {
         return null;
     }
 
-     */
-}
+   
 }
