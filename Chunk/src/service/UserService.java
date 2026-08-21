@@ -15,7 +15,7 @@ public class UserService {
         Boolean isDublicateUsername = userRepository.isDoublicateUsername(user.getUsername());
 
         if (isDublicateUsername) {
-            return -1 ;
+            return -2 ;
         }
       return userRepository.signUp(user) ;
 

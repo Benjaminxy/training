@@ -4,7 +4,12 @@ import jak.User;
 
 public class UserRepository {
 
-     private  final User[] USERS = new User[10];
+     private  final User[] USERS = new User[1];
+
+     public UserRepository () {
+        USERS[0]= new User("karim" , "karimi" ,"karims");
+
+     }
 
 public boolean isDoublicateUsername (String username)
 

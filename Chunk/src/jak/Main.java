@@ -33,13 +33,15 @@ public class Main {
 
          int result = userService.signUp(new User(name, username, password));
 
-        if (result ==-1) {
+        if (result ==-2) {
 
             System.out.println("The usename exist try again");
 
-        } else {
+        } else if (result == -1){
 
-            System.out.println("Done!");
+            System.out.println("Array dont have any index!");
+        }else {
+            System.out.println("Done");
         }
 
       
