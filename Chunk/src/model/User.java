@@ -1,4 +1,4 @@
-package jak;
+package model;
 
 public class User {
 

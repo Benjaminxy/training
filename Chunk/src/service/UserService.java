@@ -1,8 +1,7 @@
 package service;
 
 
-import  jak.User;
-
+import model.User;
 import repository.UserRepository;
 
 public class UserService {
@@ -12,9 +11,9 @@ public class UserService {
     public int signUp (User user)
     {
 
-        Boolean isDublicateUsername = userRepository.isDoublicateUsername(user.getUsername());
+        Boolean isDuplicateUsername = userRepository.isDuplicateUsername(user.getUsername());
 
-        if (isDublicateUsername) {
+        if (isDuplicateUsername) {
             return -2  ;
         }
       return userRepository.signUp(user) ;
